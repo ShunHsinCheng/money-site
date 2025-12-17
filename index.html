@@ -23,6 +23,7 @@
       <li><a href="#summary" class="menu-link">總覽</a></li>
       <li><a href="#tx-form" class="menu-link">新增紀錄</a></li>
       <li><a href="#tx-tbody" class="menu-link">收支紀錄</a></li>
+      <li><a href="#calendar" class="menu-link" id="calendar-link">月曆</a></li>
       <li><button id="menu-clear" class="menu-btn">清空所有紀錄</button></li>
     </ul>
   </nav>
@@ -34,6 +35,44 @@
       <h1>零用錢記帳小管家</h1>
       <p class="subtitle">理清金錢去向，更好管理零用錢 🧾💰</p>
     </header>
+
+    <!-- 月曆區塊（預設隱藏，點選左側選單才顯示） -->
+    <section id="calendar" class="box" style="display:none;">
+      <h3>月曆</h3>
+      <div class="calendar-controls">
+        <button id="prev-month" class="btn">&lt;</button>
+        <span id="calendar-month-label"></span>
+        <button id="next-month" class="btn">&gt;</button>
+      </div>
+      <div class="calendar-table-wrapper">
+        <table class="calendar-table">
+          <thead>
+            <tr>
+              <th>日</th>
+              <th>一</th>
+              <th>二</th>
+              <th>三</th>
+              <th>四</th>
+              <th>五</th>
+              <th>六</th>
+            </tr>
+          </thead>
+          <tbody id="calendar-tbody">
+            <!-- 動態生成月曆格子與每日記錄 -->
+          </tbody>
+        </table>
+      </div>
+      <div id="calendar-detail-modal" class="calendar-detail-modal" style="display:none;">
+        <div class="calendar-detail-content">
+          <span id="calendar-detail-close" class="calendar-detail-close">&times;</span>
+          <h4 id="calendar-detail-date"></h4>
+          <ul id="calendar-detail-list">
+            <!-- 這邊會放進該日所有收支記錄細節 -->
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- End 月曆區塊 -->
 
     <section id="summary" class="summary">
       <div class="card">
